@@ -1,0 +1,57 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-color: #6A868D;
+  height: 100vh;
+  width: 100%;
+}
+
+.title {
+  color: white;
+}
+
+.bg-head {
+  background-color: #FB8622;
+}
+
+.invoice-form {
+  background-color: white;
+  /* border: 1px solid; */
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.product-upload {
+  width: 60%;
+  min-height: 150px;
+  
+}
+
+/* buttons */
+.get-link {
+  background-color: #FB8622;
+  color: white;
+}
+
+.add {
+  background-color: green;
+  color: white;
+} 
+
+.del  {
+  background-color: red;
+  color: white;
+}
+
+.del:hover, .add:hover {
+  color: white;
+}
+
+.get-link:hover {
+  background-color: #ff7700;
+  color: white;
+}
