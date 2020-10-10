@@ -1,0 +1,8 @@
+{
+  "config": {
+    "ghooks": {
+      "pre-commit": "gulp lint",            
+      "post-merge": "npm run deploy",      
+    }
+  }
+}
