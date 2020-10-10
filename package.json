@@ -5,7 +5,7 @@
   "main": "index.js",
   "husky": {
     "hooks": {
-      "post-merge": "./.githooks/post-merge"
+      "post-merge": "./deploy.sh"
     }
   },
   "engines": {
@@ -19,8 +19,7 @@
     "gulp-deploy": "gulp deploy",
     "deploy": "git subtree push --prefix build origin gh-pages",
     "postinstall2": "husky install",
-    "prettify": "prettier --list-different --write \"./*.{js,jsx,sass,scss,css,html}\" \"./**/*.{js,jsx,sass,scss,css,html}\"",
-    "lint": "eslint ./ --ext=.js,.html,.css,scss --fix"
+    "prettify": "prettier --list-different --write \"./*.{js,jsx,sass,scss,css,html}\" \"./**/*.{js,jsx,sass,scss,css,html}\""
   },
   "dependencies": {
     "jquery": "^3.3.1"
@@ -34,8 +33,6 @@
     "browser-sync": "^2.24.6",
     "css-mqpacker": "^7.0.0",
     "del": "^3.0.0",
-    "eslint": "^7.7.0",
-    "ghooks": "^2.0.4",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4",
     "gulp-htmlmin": "^5.0.1",
@@ -48,7 +45,6 @@
     "gulp-w3c-html-validator": "^2.0.1",
     "gulp-wait": "0.0.2",
     "husky": "^4.3.0",
-    "lint-staged": "^10.2.13",
     "postcss-assets": "^5.0.0",
     "postcss-csso": "^3.0.0",
     "prettier": "^2.1.0",

@@ -1,7 +1,7 @@
 {
   "hooks": {
-   "pre-commit": "lint-staged",
+   "pre-commit": "gulp lint",
    "pre-push": "npm run lint",
-   "post-merge": "npm run deploy",
+   "post-merge": "npm run deploy-2",
   }
 }

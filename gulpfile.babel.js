@@ -69,7 +69,7 @@ const Build = ((base) => ({
   js: `${base}/js`,
   img: `${base}/img`,
   fonts: `${base}/fonts`,
-}))("build");
+}))("dist");
 
 const Source = ((base) => ({
   html: `${base}/html`,
