@@ -2,64 +2,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Quando&display=swap" rel="stylesheet');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Quando';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quando";
 }
 
 body {
-    height: 100vh;
-    background-color: #d3e1e1;
+  height: 100vh;
+  background-color: #d3e1e1;
 }
 
 /* The Receipt */
 .receipt {
-    width: 360px;
-    height: 720px;
-    background-color: white;
-    border-radius: 30px;
-    position:  relative;
-    top: 50%;
-    left: 50%;
-    margin-top: -360px;
-    margin-left: -180px;
-    box-shadow: 14px 14px 22px --18px;
-    padding: 20px;
+  width: 360px;
+  height: 720px;
+  background-color: white;
+  border-radius: 30px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-top: -360px;
+  margin-left: -180px;
+  box-shadow: 14px 14px 22px --18px;
+  padding: 20px;
 }
 
 /* Invoice */
 .invoice {
-    text-transform: uppercase;
-    text-align: right;
-    margin-top: 10px;
-    font-size: 15px;
-    line-height: 30px;
-    color: #000000;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #000000;
 }
 
 .invoice p {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 hr {
-    border: 1px solid #ddd;
-    margin: 15px 0;
+  border: 1px solid #ddd;
+  margin: 15px 0;
 }
 
 table {
-    border-collapse: separate;
-    margin: 2rem auto;
-    border-spacing: 20px 0;
-    
+  border-collapse: separate;
+  margin: 2rem auto;
+  border-spacing: 20px 0;
 }
 
 td {
-    text-align: right;
-    
+  text-align: right;
 }
 
-.right{
-    border-bottom: 1px solid #ddd;
+.right {
+  border-bottom: 1px solid #ddd;
 }
 
+// Google oauth
+.abcRioButtonLightBlue {
+  border-radius: 3px !important;
+  height: unset !important;
+  width: unset !important;
+}
+
+.abcRioButtonIcon {
+  display: none;
+}
+
+#not_signed_in451ubqwyjj2r::after {
+  content: " with Google";
+}
+
+.abcRioButtonContents {
+  line-height: 26px !important;
+}
+
+// End google auth
