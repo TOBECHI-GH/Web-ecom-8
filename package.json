@@ -21,9 +21,11 @@
   },
   "homepage": "https://github.com/{username}/{repo}",
   "dependencies": {
-    "express": "^4.1.2",
     "body-parser": "^1.1.2",
+    "dateformat": "^3.0.3",
     "errorhandler": "^1.0.1",
+    "express": "^4.1.2",
+    "firebase": "^7.23.0",
     "method-override": "^1.0.0"
   },
   "bin": {
