@@ -14,55 +14,21 @@ let increment = 1;
 
 function addRow() {
   increment += 1;
-  console.log(increment);
+  // console.log(increment);
   
   let tbody = document.getElementsByTagName('tbody')[0];
   let newRow = `
      <tr id='addr${increment}'>
-       <td>${increment}</td>
+      <td>${increment}</td>
+      <td><input type="text" name='product'  placeholder='Item Description' class="form-control"/></td>
+      <td><input type="number" name='rate' placeholder='0.00' class="form-control rate" step="0" min="0"/></td>
+      <td><input type="number" name='qty' placeholder='1' class="form-control qty" step="0.00" min="0"/></td>
+      <td><input type="number" name='total' placeholder='0.00' class="form-control total" readonly/></td>
+      <td><input type="number" name='total' placeholder='' class="form-control total" readonly/></td>
      </tr>
     `
-   tbody.innerHTML = newRow;
-  console.log(tbody.innerHTML);
-  
-  // let newRow = document.createElement('tr');
-  // let tr = document.createTextNode(`${increment}`);
-  // newRow.appendChild(tr);
-//   document.getElementsByTagName('tbody')[0].appendChild(newRow);
-//   newRow.setAttribute('id', `addr${increment}`);
-//   tr = document.getElementById(`addr${increment}`);
-//   console.log(tr);
-
-
-//   let newTd1 = document.createElement('td');
-//   let newTd2 = document.createElement('td');
-//   let newTd3 = document.createElement('td');
-//   let newTd4 = document.createElement('td');
-//   let newTd5 = document.createElement('td');
-//   let newTd6 = document.createElement('td');
-
-//   let td1 = document.createTextNode(`${increment}`);
-//   newTd1.appendChild(td1);
-//   let td2 = document.createTextNode(`${increment}`);
-//   newTd2.appendChild(td2);
-//   let td3 = document.createTextNode(`${increment}`);
-//   newTd3.appendChild(td3);
-//   let td4 = document.createTextNode(`${increment}`);
-//   newTd4.appendChild(td4);
-//   let td5 = document.createTextNode(`${increment}`);
-//   newTd5.appendChild(td5);
-//   let td6 = document.createTextNode(`${increment}`);
-//   newTd6.appendChild(td6);
-
-//   let documentFragment = document.createDocumentFragment();
-//   documentFragment.appendChild(newTd1);
-//   documentFragment.appendChild(newTd2);
-//   documentFragment.appendChild(newTd3);
-//   documentFragment.appendChild(newTd4);
-//   documentFragment.appendChild(newTd5);
-//   documentFragment.appendChild(newTd6);
-  
-//   tr.appendChild(documentFragment);
+   tbody.insertAdjacentHTML('beforeend', newRow);
+  // console.log(tbody);
 };
 
 // remove
@@ -71,12 +37,11 @@ delRowBtn.addEventListener("click", delRow);
 function delRow() {
   
   if (increment >= 2) {
-    console.log(increment);
+    // console.log(increment);
     let tr = document.getElementById(`addr${increment}`);
     tr.parentNode.removeChild(tr);
     increment -= 1;
   }
- 
 };
 
 // Calculations
