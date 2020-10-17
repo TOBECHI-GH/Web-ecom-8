@@ -16,7 +16,7 @@ const config = {
 firebase.initializeApp(config);
 const db = firebase.firestore();
 
-const refKey = "invoice";
+const refKey = "invoices";
 
 function dbGetInvoice(id, res) {
   db.collection(`${refKey}`)
@@ -45,11 +45,6 @@ function dbSaveInvoice(body, res) {
   res.redirect(`${refKey}/list`);
 }
 
-function dbDeleteInvoice(id, res) {
-  db.collection(`${refKey}`).doc(id).delete();
-  res.redirect(`${refKey}/list`);
-}
-
 function getInvoice(id, res) {
   firebase
     .database()
@@ -74,11 +69,4 @@ function saveInvoice(body, res) {
   return uniqueKey;
 }
 
-function deleteInvoice(id, res) {
-  firebase
-    .database()
-    .ref(`${refKey}/` + id)
-    .remove();
-}
-
-module.exports = { saveInvoice, getInvoice, deleteInvoice };
+module.exports = { db };
