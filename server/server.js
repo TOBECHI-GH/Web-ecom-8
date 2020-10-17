@@ -37,7 +37,8 @@ app.post("/invoice", function (req, res) {
   const invoiceRecord = req.body;
   firebase.db
     .collection(`${refKey}`)
-    .doc({ data: invoiceRecord })
+    .doc()
+    .update({ data: invoiceRecord })
     .then(function (docRef) {
       return res.status(response.CREATED).json({
         data: docRef,
@@ -79,24 +80,25 @@ app.get("/invoice", function (req, res) {
 app.get("/invoice/:invoiceId", function (req, res) {
   const { invoiceId } = req.params;
 
- firebase.db
-   .collection(`${refKey}`)
-   .doc(invoiceId)
-   .get()
-   .then((doc) => {
-     const childData = doc.data();
-     return res.status(response.SUCCESS).json({
-       link: invoiceId,
-       data: childData,
-       status: "success",
-       message: "Data retrieved successfully",
-     });
-   }).catch(function (error) {
+  firebase.db
+    .collection(`${refKey}`)
+    .doc(invoiceId)
+    .get()
+    .then((doc) => {
+      const childData = doc.data();
+      return res.status(response.SUCCESS).json({
+        link: invoiceId,
+        data: childData,
+        status: "success",
+        message: "Data retrieved successfully",
+      });
+    })
+    .catch(function (error) {
       return res
         .status(response.FAILED)
         .json({ link: invoiceId, data: null, status: "error", message: error });
-    });;
-
+    });
+});
 
 // delete an invoice
 app.delete("/invoice/:invoiceId", function (req, res) {
