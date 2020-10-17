@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "clean": "rm -rf ./dist && mkdir dist",
+    "clean-win": "del -f dist && mkdir dist",
+    "build": "babel server.js -d dist"
   },
   "repository": {
     "type": "git",
@@ -21,8 +24,12 @@
   },
   "homepage": "https://github.com/{username}/{repo}",
   "dependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
     "body-parser": "^1.1.2",
     "dateformat": "^3.0.3",
+    "dotenv": "^8.2.0",
     "errorhandler": "^1.0.1",
     "express": "^4.1.2",
     "firebase": "^7.23.0",

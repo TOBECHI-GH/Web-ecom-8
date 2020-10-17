@@ -1,17 +1,20 @@
+require("dotenv").config();
 const firebase = require("firebase");
 const dateFormat = require("dateformat");
 
+const env = process.env;
+
 const config = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
+  apiKey: env.apiKey,
+  authDomain: env.authDomain,
+  databaseURL: env.databaseURL,
+  projectId: env.projectId,
+  storageBucket: env.storageBucket,
+  messagingSenderId: env.messagingSenderId,
 };
 
 firebase.initializeApp(config);
-// const db = firebase.firestore();
+const db = firebase.firestore();
 
 const refKey = "invoice";
 
@@ -42,10 +45,10 @@ function dbSaveInvoice(body, res) {
   res.redirect(`${refKey}/list`);
 }
 
-// function dbDeleteInvoice(id, res) {
-//   db.collection(`${refKey}`).doc(id).delete();
-//   res.redirect(`${refKey}/list`);
-// }
+function dbDeleteInvoice(id, res) {
+  db.collection(`${refKey}`).doc(id).delete();
+  res.redirect(`${refKey}/list`);
+}
 
 function getInvoice(id, res) {
   firebase

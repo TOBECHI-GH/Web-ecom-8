@@ -1,11 +1,11 @@
 #!/usr/bin/env node
+require("dotenv").config();
 
 var express = require("express"),
   app = express(),
   bodyParser = require("body-parser"),
   errorHandler = require("errorhandler"),
   methodOverride = require("method-override"),
-  firebase = require("./firebase"),
   hostname = process.env.HOSTNAME || "localhost",
   port = parseInt(process.env.PORT, 10) || 4567,
   publicDir = process.argv[2] || __dirname + "/public",
@@ -34,10 +34,5 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(publicDir, "/index.html"));
 });
 
-console.log(
-  "Simple static server showing %s listening at http://%s:%s",
-  publicDir,
-  hostname,
-  port
-);
+console.log("Customyz app running at http://%s:%s", publicDir, hostname, port);
 app.listen(port, hostname);
