@@ -6,6 +6,7 @@ var express = require("express"),
   bodyParser = require("body-parser"),
   errorHandler = require("errorhandler"),
   methodOverride = require("method-override"),
+  cors = require("cors"),
   firebase = require("./firebase");
 (hostname = process.env.HOSTNAME || "localhost"),
   (port = parseInt(process.env.PORT, 10) || 4567),
@@ -13,14 +14,18 @@ var express = require("express"),
   (path = require("path"));
 
 app.use(methodOverride());
-app.use(bodyParser.json({ type: "application/activity+json" })); // support json encoded bodies
+app.use(bodyParser.json()); // parse json req body
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use(cors());
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
 app.use(express.static(publicDir));
 app.use(
   errorHandler({
@@ -33,24 +38,25 @@ const refKey = "invoices";
 const response = { CREATED: 201, SUCCESS: 200, FAILED: 400, NOTFOUND: 404 };
 
 // send an invoice to db and return link to record
-app.post("/invoice", function (req, res) {
-  const invoiceRecord = req.body;
-  firebase.db
-    .collection(`${refKey}`)
-    .doc()
-    .update({ data: invoiceRecord })
-    .then(function (docRef) {
-      return res.status(response.CREATED).json({
-        data: docRef,
-        status: "success",
-        message: "Invoice saved succesfully",
-      });
-    })
-    .catch(function (error) {
-      return res
-        .status(response.FAILED)
-        .json({ data: null, status: "error", message: error });
+app.post("/invoice", async function (req, res) {
+  try {
+    const invoiceRecord = req.body;
+    invoiceRecord.entryDate = Date.now();
+    const doc = firebase.db.collection(`${refKey}`).doc();
+    await doc.set(invoiceRecord);
+
+    console.log("doc key", doc.id);
+
+    return res.status(response.CREATED).json({
+      data: doc.id,
+      status: "success",
+      message: "Invoice saved succesfully",
     });
+  } catch (error) {
+    return res
+      .status(response.FAILED)
+      .json({ data: null, status: "error", message: error });
+  }
 });
 
 // get all invoices
@@ -62,12 +68,12 @@ app.get("/invoice", function (req, res) {
     .then(function (querySnapshot) {
       const invoices = [];
       querySnapshot.forEach((doc) => {
-        const invoiceStruct = { id: doc.id, data: doc.data };
+        const invoiceStruct = { id: doc.id, data: doc.data() };
         invoices.push(invoiceStruct);
       });
       return res
         .status(response.SUCCESS)
-        .json({ data: invoives, status: "success", message: "All invoices" });
+        .json({ data: invoices, status: "success", message: "All invoices" });
     })
     .catch(function (error) {
       return res
