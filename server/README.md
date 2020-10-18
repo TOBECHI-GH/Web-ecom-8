@@ -4,15 +4,27 @@
 
 Our simple static file server.
 
-## Installation
+## Installation (On Local Machine)
 
 Install dependencies (first time only):
 
     $ npm install
 
+## Installation (Using Docker)
+
+    $ docker build -t gads/customyz:1.0 .
+
 How to start:
 
-    $ node server
+- On local machine
+  \$ node server
+
+- On docker
+  \$ docker run -p 4567:8080 imageId
+
+How to deploy docker image
+$ docker tag imageId conquext/customyz:gads01server
+    $ docker push conquext/customyz:gads
 
 Open [http://localhost:4567](http://localhost:4567)
 

@@ -28,6 +28,7 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "body-parser": "^1.1.2",
+    "cors": "^2.8.5",
     "dateformat": "^3.0.3",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.0.1",
