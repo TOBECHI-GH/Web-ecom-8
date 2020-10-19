@@ -60,24 +60,3 @@ td {
 .right {
   border-bottom: 1px solid #ddd;
 }
-
-// Google oauth
-.abcRioButtonLightBlue {
-  border-radius: 3px !important;
-  height: unset !important;
-  width: unset !important;
-}
-
-.abcRioButtonIcon {
-  display: none;
-}
-
-#not_signed_in451ubqwyjj2r::after {
-  content: " with Google";
-}
-
-.abcRioButtonContents {
-  line-height: 26px !important;
-}
-
-// End google auth
