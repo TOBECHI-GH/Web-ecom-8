@@ -17,7 +17,7 @@
     "build": "gulp build",
     "deploy-2": "./deploy.sh",
     "gulp-deploy": "gulp deploy",
-    "deploy": "git subtree push --prefix build origin gh-pages",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "postinstall2": "husky install",
     "prettify": "prettier --list-different --write \"./*.{js,jsx,sass,scss,css,html}\" \"./**/*.{js,jsx,sass,scss,css,html}\""
   },
