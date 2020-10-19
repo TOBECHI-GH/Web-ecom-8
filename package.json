@@ -15,6 +15,9 @@
   "scripts": {
     "start": "gulp default",
     "build": "gulp build",
+    "docker-build": "gulp build && cp -r dist/* server/public",
+    "docker-build-win": "xcopy -r ./dist* ./server/public",
+    "start-docker": "docker run -p 4567:8080 containerId",
     "deploy-2": "./deploy.sh",
     "gulp-deploy": "gulp deploy",
     "deploy": "git subtree push --prefix dist origin gh-pages",
