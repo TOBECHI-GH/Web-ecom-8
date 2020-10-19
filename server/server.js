@@ -10,7 +10,7 @@ var express = require("express"),
   firebase = require("./firebase");
 (hostname = process.env.HOSTNAME || "localhost"),
   (port = parseInt(process.env.PORT, 10) || 4567),
-  (publicDir = process.argv[2] || __dirname + "/public"),
+  (publicDir = process.argv[2] || __dirname + "../dist"),
   (path = require("path"));
 
 app.use(methodOverride());
