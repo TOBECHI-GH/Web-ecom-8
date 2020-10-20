@@ -15,6 +15,7 @@
   "scripts": {
     "start": "gulp default",
     "build": "gulp build",
+    "docker-up": "docker build -t gads/customyz:1.0 .",
     "docker-build": "gulp build && cp -r dist/* server/public",
     "docker-build-win": "xcopy -r ./dist* ./server/public",
     "start-docker": "docker run -p 4567:8080 containerId",
