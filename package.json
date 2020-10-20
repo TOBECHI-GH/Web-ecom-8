@@ -1,7 +1,7 @@
 {
-  "name": "customyz",
+  "name": "cuztomyz",
   "version": "1.0.0",
-  "description": "Frontend page",
+  "description": "Deloy build",
   "main": "index.js",
   "husky": {
     "hooks": {
