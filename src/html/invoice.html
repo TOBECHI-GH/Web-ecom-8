@@ -15,7 +15,7 @@
     </a>
   </nav>
   <div class="invoice-form  w-75 mb-5 mx-auto py-md-5 px-md-5 p-3">
-    <form action="" class="bg-head py-4 px-2 shadow">
+    <form action="" onsubmit="event.preventDefault();" class="bg-head py-4 px-2 shadow">
       <div class="row">
         <div class="col-md-6">
           <h1 class="title pl-lg-4 ">INVOICE</h1>
@@ -24,7 +24,7 @@
           <div class="upload-container float-right">
             <div class="wrapper">
               <div class="image">
-                <img id="img" src="" alt="">
+                <img id="upload-image" src="" alt="">
               </div>
               <div class="content text-center p-3">
                 <div class="icon">
@@ -127,9 +127,9 @@
               <tr id='addr0'>
                 <td>1</td>
                 <td><input type="text" name='product'  placeholder='Item Description' class="form-control"/></td>
-                <td><input type="number" name='rate' placeholder='0.00' class="form-control rate" step="0" min="0"/></td>
-                <td><input type="number" name='qty' placeholder='1' class="form-control qty" step="0.00" min="0"/></td>
-                <td><input type="number" name='total' placeholder='0.00' class="form-control total" readonly/></td>
+                <td><input type="number" name='rate[]' placeholder='0.00' class="form-control rate" step="0" min="0"/></td>
+                <td><input type="number" name='qty[]' placeholder='1' class="form-control qty" step="0.00" min="0"/></td>
+                <td><input type="number" name='amount[]' placeholder='0.00' class="form-control total" readonly/></td>
                 <td><input type="number" name='total' placeholder='' class="form-control total" readonly/></td>
               </tr>
             </tbody>
@@ -191,6 +191,6 @@
 
   
   
-  <script src="js/index.js"></script>  
+  <script src="js/index.js"></script>
 </body>
 </html>

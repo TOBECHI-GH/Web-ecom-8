@@ -5,64 +5,39 @@ const defaultPreview = document.querySelector(".default-preview");
 const table = document.getElementById('tab_logic');
 const addRowBtn = document.getElementById('add_row');
 const delRowBtn = document.getElementById('delete_row');
+// const amt = document.getElementById('amount');
+const subTotal = document.getElementById('sub_total');
+const total = document.getElementById('total_amount');
 
+
+
+// const rowTab = document.querySelector('.row_tabs');
 
 // Adding and removing table rows
 addRowBtn.addEventListener("click", addRow);
 
 let increment = 1;
 
+
+
 function addRow() {
   increment += 1;
-  console.log(increment);
+  // console.log(increment);
   
   let tbody = document.getElementsByTagName('tbody')[0];
   let newRow = `
-     <tr id='addr${increment}'>
-       <td>${increment}</td>
+     <tr id='addr${increment}' class="row_tabs">
+      <td>${increment}</td>
+      <td><input type="text" name='product[]'  placeholder='Item Description' class="form-control"/></td>
+      <td><input type="number" name='rate[]' placeholder='0.00' class="form-control rate" step="0" min="0"/></td>
+      <td><input type="number" name='qty[]' placeholder='1' class="form-control qty" step="0.00" min="0"/></td>
+      <td><input type="number" id="amount" name='amount[]' placeholder='0.00' class="form-control total" readonly/></td>
+      <td><input type="number" name='tax[]' placeholder='' class="form-control total" readonly/></td>
      </tr>
     `
-   tbody.innerHTML = newRow;
-  console.log(tbody.innerHTML);
-  
-  // let newRow = document.createElement('tr');
-  // let tr = document.createTextNode(`${increment}`);
-  // newRow.appendChild(tr);
-//   document.getElementsByTagName('tbody')[0].appendChild(newRow);
-//   newRow.setAttribute('id', `addr${increment}`);
-//   tr = document.getElementById(`addr${increment}`);
-//   console.log(tr);
-
-
-//   let newTd1 = document.createElement('td');
-//   let newTd2 = document.createElement('td');
-//   let newTd3 = document.createElement('td');
-//   let newTd4 = document.createElement('td');
-//   let newTd5 = document.createElement('td');
-//   let newTd6 = document.createElement('td');
-
-//   let td1 = document.createTextNode(`${increment}`);
-//   newTd1.appendChild(td1);
-//   let td2 = document.createTextNode(`${increment}`);
-//   newTd2.appendChild(td2);
-//   let td3 = document.createTextNode(`${increment}`);
-//   newTd3.appendChild(td3);
-//   let td4 = document.createTextNode(`${increment}`);
-//   newTd4.appendChild(td4);
-//   let td5 = document.createTextNode(`${increment}`);
-//   newTd5.appendChild(td5);
-//   let td6 = document.createTextNode(`${increment}`);
-//   newTd6.appendChild(td6);
-
-//   let documentFragment = document.createDocumentFragment();
-//   documentFragment.appendChild(newTd1);
-//   documentFragment.appendChild(newTd2);
-//   documentFragment.appendChild(newTd3);
-//   documentFragment.appendChild(newTd4);
-//   documentFragment.appendChild(newTd5);
-//   documentFragment.appendChild(newTd6);
-  
-//   tr.appendChild(documentFragment);
+   tbody.insertAdjacentHTML("beforeend", newRow);
+   productTotal()
+  // console.log(tbody.innerHTML);
 };
 
 // remove
@@ -76,11 +51,55 @@ function delRow() {
     tr.parentNode.removeChild(tr);
     increment -= 1;
   }
+  productTotal();
  
 };
 
-// Calculations
 
+// Product Total and Subtotal
+function productTotal() {
+
+  let rateInput = document.querySelectorAll('.row_tabs > td > input[name="rate[]"]');
+  console.log(rateInput);
+  let qtyInput = document.querySelectorAll('.row_tabs > td > input[name="qty[]"]');
+  let amtInput = document.querySelectorAll('.row_tabs > td > input[name="amount[]"]');
+
+  
+  for (let i = 0; i < rateInput.length; i++) {
+    const eachRate = rateInput[i];
+
+    const eachQty = qtyInput[i];
+
+    const eachAmt = amtInput[i];
+
+    eachRate.addEventListener('change', calc); 
+    eachQty.addEventListener('change', calc); 
+
+    function calc(){
+      const rate = parseInt(eachRate.value);
+      const qty = eachQty.value;
+      amount = rate * qty;
+      eachAmt.value = amount;
+      console.log(amount);
+    }
+
+  }
+}
+
+productTotal()
+
+function sumTotal() {
+  let sumVal=0;
+  for(n=1; n<table.rows.length; n++) {
+    sumVal = sumVal + table.rows[n].cell[4].innerHTML;
+  }
+
+  console.log(sumVal);
+  // subTotal.value = amount;
+  // total.value = amount;
+}
+
+sumTotal()
 
 
 

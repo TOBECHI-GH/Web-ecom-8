@@ -1,16 +1,13 @@
 const wrapper = document.querySelector(".wrapper");
-const fileName = document.querySelector(".file-name");
 const defaultBtn = document.querySelector("#default-btn");
 const customBtn = document.querySelector("#custom-btn");
 const cancelBtn = document.querySelector("#cancel-btn i");
-const img = document.getElementById("img");
+const img = document.querySelector("#upload-image");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
 function defaultBtnActive(){
   defaultBtn.click();
 }
-
-
-
 defaultBtn.addEventListener("change", function(){
   const file = this.files[0];
   if(file){
@@ -28,5 +25,6 @@ defaultBtn.addEventListener("change", function(){
   }
   if(this.value){
     let valueStore = this.value.match(regExp);
+    fileName.textContent = valueStore;
   }
 });

@@ -8,7 +8,7 @@
 }
 
 .bg-img {
-  background-color: #6a868d;
+  background-color: #6A868D;
   height: 100vh;
   width: 100%;
 }
@@ -49,7 +49,7 @@
 .wrapper img{
   height: 100%;
   width: 100%;
-  /* object-fit: cover; */
+  object-fit: cover;
 }
 
 .wrapper .icon{
@@ -110,7 +110,7 @@
 }
 
 .bg-head {
-  background-color: #fb8622;
+  background-color: #FB8622;
 }
 
 .invoice-form {
@@ -123,26 +123,26 @@
 .product-upload {
   width: 60%;
   min-height: 150px;
+  
 }
 
 /* buttons */
 .get-link {
-  background-color: #fb8622;
+  background-color: #FB8622;
   color: white;
 }
 
 .add {
   background-color: green;
   color: white;
-}
+} 
 
-.del {
+.del  {
   background-color: red;
   color: white;
 }
 
-.del:hover,
-.add:hover {
+.del:hover, .add:hover {
   color: white;
 }
 
