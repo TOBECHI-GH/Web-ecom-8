@@ -1,29 +1,36 @@
 const wrapper = document.querySelector(".wrapper");
-const defaultBtn = document.querySelector("#default-btn");
-const customBtn = document.querySelector("#custom-btn");
+const uploadBtn = document.querySelector("#btn-logo-upload");
+const fileUpload = document.querySelector("#file-upload-input");
 const cancelBtn = document.querySelector("#cancel-btn i");
 const img = document.querySelector("#upload-image");
 let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
 
-function defaultBtnActive(){
-  defaultBtn.click();
+function fileUploadActive() {
+  console.log("we clicked to upload");
+  fileUpload.click();
 }
-defaultBtn.addEventListener("change", function(){
+
+uploadBtn &&
+  uploadBtn.addEventListener("click", () => {
+    fileUpload.click();
+  });
+
+fileUpload.addEventListener("change", function () {
   const file = this.files[0];
-  if(file){
+  if (file) {
     const reader = new FileReader();
-    reader.onload = function(){
+    reader.onload = function () {
       const result = reader.result;
       img.src = result;
       wrapper.classList.add("active");
-    }
-    cancelBtn.addEventListener("click", function(){
+    };
+    cancelBtn.addEventListener("click", function () {
       img.src = "";
       wrapper.classList.remove("active");
-    })
+    });
     reader.readAsDataURL(file);
   }
-  if(this.value){
+  if (this.value) {
     let valueStore = this.value.match(regExp);
     fileName.textContent = valueStore;
   }
