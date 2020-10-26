@@ -38,7 +38,7 @@ Cuztomyz is an online invoicing platform that helps businesses reduce the cost o
 We make it very easy to use and remove the need to make provisions for physical infrastructures. Our platform is very easy to use, there is no need to login or sign up. 
 All needed to do is navigate to our site > Click Invoices > Fill in the required details > Preview > and the send. That's all.
 
-Our Portal has the following [features]()
+Our Portal has the following [features](/Features)
 
 While we recongise that this is an open source project, we employ you to go through our [liensing]() for further details on how to use our codes. Also, Instrustions on how to install local version of our program is avalaible [Here.]()
 
