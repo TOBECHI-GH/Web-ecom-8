@@ -12,15 +12,17 @@ Install dependencies (first time only):
 
 ## Installation (Using Docker)
 
-    $ docker build -t gads/customyz:1.0 .
+    $ docker build -t gads/cuztomyz:1.0 .
 
 How to start:
 
 - On local machine
-  \$ node server
+
+  $ node server
 
 - On docker
-  \$ docker run -p 4567:8080 imageId
+
+  $ docker run -p 4567:8080 [imageId]
 
 How to deploy docker image
 $ docker tag imageId conquext/customyz:gads01server
