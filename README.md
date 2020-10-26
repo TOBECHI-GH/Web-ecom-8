@@ -40,7 +40,7 @@ All needed to do is navigate to our site > Click Invoices > Fill in the required
 
 Our Portal has the following [features](Features.md)
 
-While we recongise that this is an open source project, we employ you to go through our [liensing]() for further details on how to use our codes. Also, Instrustions on how to install local version of our program is avalaible [Here.](Instruction.md)
+While we recongise that this is an open source project, we employ you to go through our [licensing](@) for further details on how to use our codes. Also, Instrustions on how to install local version of our program is avalaible [Here.](Instruction.md)
 
 We hope you would enjoy and continue using this great service we are providing you.
 
