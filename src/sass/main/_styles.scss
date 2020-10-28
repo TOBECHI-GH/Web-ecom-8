@@ -1,16 +1,6 @@
 /* Our Font */
-@import url('https://fonts.googleapis.com/css2?family=Quando&display=swap" rel="stylesheet');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Quando";
-}
-
 body {
-  height: 100vh;
-  background-color: #d3e1e1;
+  min-height: 100vh;
 }
 
 /* The Receipt */
