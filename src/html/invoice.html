@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoices</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body class="bg-img">
+    <nav class="navbar navbar-light justify-content-center">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.svg" alt="logo" />
+      </a>
+    </nav>
+    <div class="p-3 mx-auto mb-5 invoice-form w-75 py-md-5 px-md-5">
+      <form action="" class="px-2 py-4 shadow bg-head">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="title pl-lg-4">INVOICE</h1>
+          </div>
+          <div class="col-6">
+            <div class="float-right upload-container">
+              <div class="wrapper">
+                <div class="image">
+                  <img id="img" src="" alt="" />
+                </div>
+                <div class="p-3 text-center content">
+                  <div class="icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                  </div>
+                  <div class="text">No file chosen, yet!</div>
+                </div>
+                <div id="cancel-btn">
+                  <i class="fas fa-times"></i>
+                </div>
+              </div>
+              <button onclick="defaultBtnActive()" id="custom-btn">
+                Choose a file
+              </button>
+              <input id="default-btn" type="file" hidden />
+            </div>
+          </div>
+        </div>
+      </form>
+      <br />
+      <hr />
+
+      <form>
+        <div class="form-row">
+          <div class="mb-3 col mb-md-0">
+            <label for="" class="">From</label>
+            <div class="mb-2 pr-md-4">
+              <label for="name" class="">Name:</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="mb-2 pr-md-4">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email Adress"
+              />
+            </div>
+            <div class="mb-2 pr-md-4">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                class="form-control"
+                placeholder="Address"
+              />
+            </div>
+            <div class="mb-2 pr-md-4">
+              <label for="phone-no">Phone No:</label>
+              <input
+                type="number"
+                id="phone-no"
+                class="form-control"
+                placeholder="Enter No"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="" class="pl-md-4">Bill To</label>
+            <div class="mb-2 pl-md-4">
+              <label for="name">Name:</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="mb-2 pl-md-4">
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                class="form-control"
+                placeholder="Email Adress"
+              />
+            </div>
+            <div class="mb-2 pl-md-4">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                id="address"
+                class="form-control"
+                placeholder="Address"
+              />
+            </div>
+            <div class="mb-2 pl-md-4">
+              <label for="phone-no">Phone No:</label>
+              <input
+                type="number"
+                id="phone-no"
+                class="form-control"
+                placeholder="Enter No"
+              />
+            </div>
+          </div>
+        </div>
+        <br />
+        <hr />
+
+        <div class="form-row justify-content-between">
+          <div class="col">
+            <!-- <label for="" class="">From</label> -->
+            <div class="mb-2">
+              <label for="name" class="">Payment No:</label>
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Full Name"
+              />
+            </div>
+            <div class="mb-2">
+              <label for="date">Payment Date:</label>
+              <input
+                type="date"
+                id="date"
+                class="form-control"
+                placeholder="mm/dd/yyyy"
+              />
+            </div>
+          </div>
+          <div class="col"></div>
+        </div>
+
+        <br />
+        <!-- Tabled Product Description -->
+        </div>
+
+        <hr />
+        <br />
+
+        <!-- form footer -->
+        <div class="row justify-content-end">
+          <div class="col-4-lg col-4-sm">
+            <table
+              class="table table-bordered table-hover"
+              id="tab_logic_total"
+            >
+              <tbody>
+                <tr>
+                  <th class="text-center">Sub Total</th>
+                  <td class="text-center">
+                    <input
+                      type="number"
+                      name="sub_total"
+                      placeholder="0.00"
+                      class="form-control"
+                      id="sub_total"
+                      readonly
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-center">Tax(0%)</th>
+                  <td class="text-center">
+                    <div class="mb-2 input-group mb-sm-0">
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="tax"
+                        placeholder="0"
+                      />
+                      <div class="input-group-addon">%</div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-center">Total</th>
+                  <td class="text-center">
+                    <input
+                      type="number"
+                      name="total_amount"
+                      id="total_amount"
+                      placeholder="0.00"
+                      class="form-control"
+                      readonly
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <th class="text-center">Balance</th>
+                  <td class="text-center">
+                    <input
+                      type="number"
+                      name="tax_amount"
+                      id="tax_amount"
+                      placeholder="0.00"
+                      class="form-control"
+                      readonly
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- extra note -->
+        <div class="clearfix form-group">
+          <label for="exampleTextarea" class="font-weight-bold"
+            >Extra Notes</label
+          >
+          <textarea
+            class="form-control"
+            id="exampleTextarea"
+            rows="3"
+            placeholder="Notes-relevant information not covered ,additional terms and condition. "
+          ></textarea>
+        </div>
+        <!-- get link button -->
+        <button type="button" class="btn get-link btn-lg">
+          Preview Invoice
+        </button>
+      </form>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
