@@ -1,0 +1,53 @@
+{
+  "name": "customyz",
+  "version": "1.0.0",
+  "description": "Frontend page",
+  "main": "index.js",
+  "husky": {
+    "hooks": {
+      "post-merge": "./deploy.sh"
+    }
+  },
+  "scripts": {
+    "start": "gulp default",
+    "build": "gulp build",
+    "deploy-2": "./deploy.sh",
+    "gulp-deploy": "gulp deploy",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
+    "postinstall2": "husky install",
+    "prettify": "prettier --list-different --write \"./*.{js,jsx,sass,scss,css,html}\" \"./**/*.{js,jsx,sass,scss,css,html}\""
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "browser-sync": "^2.24.6",
+    "css-mqpacker": "^7.0.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-prettify": "^0.5.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-w3c-html-validator": "^2.0.1",
+    "gulp-wait": "0.0.2",
+    "husky": "^4.3.0",
+    "postcss-assets": "^5.0.0",
+    "postcss-csso": "^3.0.0",
+    "prettier": "^2.1.0",
+    "rollup": "^0.63.4",
+    "rollup-plugin-babel": "^3.0.7",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-terser": "^1.0.1",
+    "run-sequence": "^2.2.1"
+  }
+}

@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bg-img {
+  background-color: #6a868d;
+  height: 100vh;
+  width: 100%;
+}
+
+/* upload style */
+.upload-container {
+  height: 150px;
+  width: 200px;
+  position: relative;
+}
+
+.upload-container .wrapper {
+  position: relative;
+  height: 100px;
+  width: 75%;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wrapper.active {
+  border: none;
+}
+
+.wrapper .image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.wrapper .icon {
+  font-size: 20px;
+  color: #9658fe;
+}
+
+.wrapper .text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #5b5b7b;
+}
+
+.wrapper #cancel-btn i {
+  position: absolute;
+  font-size: 20px;
+  right: 5px;
+  top: 5px;
+  color: #9658fe;
+  cursor: pointer;
+  display: none;
+}
+
+.wrapper.active:hover #cancel-btn i {
+  display: block;
+}
+
+.wrapper #cancel-btn i:hover {
+  color: #e74c3c;
+}
+
+#btn-logo-upload {
+  margin-top: 15px;
+  display: block;
+  width: 75%;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+/* upload-image end */
+
+@media screen and (max-width: 360px) {
+  #btn-logo-upload,
+  .wrapper {
+    width: 100%;
+  }
+}
+
+.title {
+  color: white;
+}
+
+.bg-head {
+  background-color: #fb8622;
+}
+
+.invoice-form {
+  background-color: white;
+  /* border: 1px solid; */
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.product-upload {
+  width: 60%;
+  min-height: 150px;
+}
+
+/* buttons */
+.get-link {
+  background-color: #fb8622;
+  color: white;
+}
+
+.add {
+  background-color: green;
+  color: white;
+}
+
+.del {
+  background-color: red;
+  color: white;
+}
+
+.del:hover,
+.add:hover {
+  color: white;
+}
+
+.get-link:hover {
+  background-color: #ff7700;
+  color: white;
+}
