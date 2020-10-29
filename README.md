@@ -1,7 +1,5 @@
 # GADS 2020 Community project
 
-![Wireframe](./src/img/wireframe/wireframe.jpg)
-
 ## Installation
 
 This Community Project was spearheaded by TEAM "Web-ecom-8". The aim of the community project was to:
@@ -44,6 +42,7 @@ We make it very easy to use and remove the need to make provisions for physical 
 All needed to do is navigate to our site > Click Invoices > Fill in the required details > Preview > and the send. That's all.
 
 Our Portal has the following [features](Features.md)
+![Wireframe](./src/img/wireframe/wireframe.jpg)
 
 While we recongise that this is an open source project, we employ you to go through our [licensing](LICENSE) for further details on how to use our codes. Also, Instrustions on how to install local version of our program is avalaible [Here.](Instruction.md)
 
