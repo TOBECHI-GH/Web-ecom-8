@@ -1,5 +1,7 @@
 # GADS community project
 
+![Wireframe](./src/img/wireframe/wireframe.jpg)
+
 ## Installation
 
 Please download zip file from [Web-ecom-8](https://github.com/TOBECHI-GH/Web-ecom-8) repository.
