@@ -1,0 +1,7 @@
+{
+  "hooks": {
+   "pre-commit": "gulp lint",
+   "pre-push": "npm run lint",
+   "post-merge": "npm run deploy-2",
+  }
+}
