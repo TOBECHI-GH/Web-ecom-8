@@ -3,7 +3,7 @@ const menuClose = document.querySelector(".menu__close");
 const mobileNav = document.querySelector(".nav__items");
 
 menuOpen &&
-  menuClose.addEventListener("click", () => {
+  menuOpen.addEventListener("click", () => {
     mobileNav.style.display = "block";
     menuOpen.style.display = "none";
     menuClose.style.display = "block";

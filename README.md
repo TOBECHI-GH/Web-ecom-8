@@ -1,6 +1,8 @@
 # GADS 2020 Community project
 
-## OVERVIEW
+![Wireframe](./src/img/wireframe/wireframe.jpg)
+
+## Installation
 
 This Community Project was spearheaded by TEAM "Web-ecom-8". The aim of the community project was to:
 
