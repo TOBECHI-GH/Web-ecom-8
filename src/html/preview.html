@@ -1,89 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/index.css" />
-    <title>Invoice Preview | Cuztomyz</title>
-  </head>
-  <body>
-    <div class="container">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+   <link rel="stylesheet" href="css/index.css">
+   <title>Invoice Preview | Cuztomyz</title>
+</head>
+<body>
+   <div class="container">
       <div class="invoice__preview">
         <section class="section-1">
-          <div class="invoice__preview--row">
-            <h3>Invoice</h3>
-            <h3>Balance Due</h3>
-          </div>
-          <div class="mb-2 invoice__preview--row">
-            <p>INV0001</p>
-            <p>$0.00</p>
-          </div>
-          <div class="invoice__preview--row">
-            <h3>Date</h3>
-            <h3>Due</h3>
-          </div>
-          <div class="mb-2 invoice__preview--row">
-            <p>Oct 13, 2020</p>
-            <p>On Receipt</p>
-          </div>
+           <div class="invoice__preview--row">
+              <h3>Invoice</h3>
+              <h3>Balance Due</h3>
+           </div>
+           <div class="invoice__preview--row mb-2">
+              <p>INV0001</p>
+              <p>$0.00</p>
+           </div>
+           <div class="invoice__preview--row">
+              <h3>Date</h3>
+              <h3>Due</h3>
+           </div>
+           <div class="invoice__preview--row mb-2">
+              <p>Oct 13, 2020</p>
+              <p>On Receipt</p>
+           </div>
         </section>
-        <section class="mt-5 section-2">
-          <div class="mb-2 invoice__preview--row lines">
-            <h3>Description</h3>
-            <h3>Amount</h3>
-          </div>
-          <div class="mb-2 invoice__preview--row">
-            <h3>Subtotal</h3>
-            <p>$0.00</p>
-          </div>
-          <div class="mb-2 invoice__preview--row">
-            <h3>Tax (0%)</h3>
-            <p>$0.00</p>
-          </div>
-          <div class="invoice__preview--row lines">
-            <h3>Total</h3>
-            <p>$0.00</p>
-          </div>
+        <section class="section-2 mt-5">
+           <div class="invoice__preview--row lines mb-2">
+              <h3>Description</h3>
+              <h3>Amount</h3>
+           </div>
+           <div class="invoice__preview--row mb-2">
+              <h3>Subtotal</h3>
+              <p>$0.00</p>
+           </div>
+            <div class="invoice__preview--row mb-2">
+              <h3>Tax (0%)</h3>
+              <p>$0.00</p>
+           </div>
+            <div class="invoice__preview--row lines">
+              <h3>Total</h3>
+              <p>$0.00</p>
+           </div>
         </section>
       </div>
       <button class="button invoice__delete">Delete Invoice</button>
       <button class="button invoice__share">Share Invoice</button>
-    </div>
-    <div class="overlay">
+   </div>
+   <div class="overlay">
       <div class="share__container">
-        <i class="fas fa-times overlay__close"></i>
-        <h3 class="share__text">Share Invoice via ...</h3>
-        <div class="share__buttons">
-          <button href="#" class="button button--facebook">
-            Facebook <i class="fab fa-facebook-f"></i>
-          </button>
-          <button href="#" class="button button--email">
-            Email <i class="far fa-envelope"></i>
-          </button>
-          <button href="#" class="button button--whatsapp">
-            WhatsApp <i class="fab fa-whatsapp"></i>
-          </button>
-        </div>
+         <i class="fas fa-times overlay__close"></i>
+         <h3 class="share__text">Share Invoice via ...</h3>
+         <div class="share__buttons">
+            <a href="#" class="button button--facebook">Messenger <i class="fab fa-facebook-messenger"></i></a>
+            <a href="javascript:window.location='mailto:name@rapidtables.com?subject=Your Cuztomyz Invoice&body=Your cuztomyz invoice is ready: ' + location.href;" 
+               class="button button--email">Email <i class="far fa-envelope"></i>
+            </a>
+            <a href="javascript:window.location='whatsapp://send?text='+encodeURIComponent(location.href);" 
+               class="button button--whatsapp">WhatsApp <i class="fab fa-whatsapp"></i>
+            </a>
+         </div>
       </div>
-    </div>
-  </body>
-  <script>
-    const overlay = document.querySelector(".overlay");
+   </div>
+</body>
+<script>
+   const overlay = document.querySelector('.overlay');
 
-    const closeOverlay = document.querySelector(".overlay__close");
-    closeOverlay &&
-      closeOverlay.addEventListener("click", () => {
-        overlay.style.display = "none";
-      });
+   const title = window.document.title;
+   const url = window.document.location.href;
 
-    const shareInvoice = document.querySelector(".invoice__share");
-    shareInvoice &&
-      shareInvoice.addEventListener("click", () => {
-        overlay.style.display = "flex";
-      });
-  </script>
+   const closeOverlay = document.querySelector('.overlay__close').addEventListener('click', () => {
+      overlay.style.display = 'none';
+   });
+
+   const shareInvoice = document.querySelector('.invoice__share').addEventListener('click', () => {
+      // check if device supports Web Share API
+      if(navigator.share) {
+         navigator.share({
+         title: `${title}`,
+         url: `${url}`
+         })
+         .then(() => {
+         console.log('Thanks for sharing');
+         })
+         .catch(console.error);
+      } else {
+         overlay.style.display = "flex";
+      }
+   });
+</script>
 </html>
