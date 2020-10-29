@@ -1,6 +1,6 @@
 # GADS community project
 
-![Wireframe](./src/img/wireframe/wireframe.jpg)
+
 
 ## Installation
 
