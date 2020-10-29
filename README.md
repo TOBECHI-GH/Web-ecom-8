@@ -1,71 +1,50 @@
-# GADS community project
+# GADS 2020 Community project
 
-## Installation
+## OVERVIEW
 
-Please download zip file from [Web-ecom-8](https://github.com/TOBECHI-GH/Web-ecom-8) repository.
+This Community Project was spearheaded by TEAM "Web-ecom-8". The aim of the community project was to:
 
-or by Git:
+1. Build innovative solutions.
 
-```
-git clone https://github.com/TOBECHI-GH/Web-ecom-8.git
-```
+2. Get an opportunity to put the skills acquired over the past 3 months into practice.
 
-Then Run the following commands from the root of the file directory
+3. Build the teams project(s) portfolio.
 
-- cd Web-ecom-8
-- git checkout Frontend
-- npm i
-- npm run start
+While challenging the team to:
 
-(If there are any errors make sure to use nodejs version 11 and below)
+1. Implement effective and practical solutions to ensure the delivery of quality education.
 
-## Deployment
+2. Strengthen the healthcare system and improve the lives of #COVID19 or non #COVID19 patients
+   .
+3. Develop solutions to promote e-commerce platforms and transition physical markets closer to the customers online.
 
-Code will automatically be deployed to gh-pages on every merge.
-To deploy the code manually, run the following commands
+4. Build solutions that address scalable digital payments to support cashless banking, cash transfers to support payment-related activities.
 
-- npm run build
-- npm run deploy
+5. Ensuring the productivity of remote employees.
 
-## Features
+With the above tasks in mind, Team #web-ecom-8 got into action and had to come up with innovative ideas that would fulfill the third challenge, while meeting any other requirements.
 
-- Advanced CSS Reset [scss-reset](https://github.com/andreymatin/scss-reset)
-- Tailwind CSS Utilities [Tailwind](https://tailwindcss.com/docs/)
-- Basic SCSS Mixins Collection [scss-mixins](https://github.com/andreymatin/scss-mixins)
-- Old browsers support ( > 1% popularity )
-- Predefined export/import JavaScript modules
-- Semantic reference
+Some processes that were taken to actualize this goal are:
 
-#### JavaScript
+1. The team had several meetings/Ideation sessions and came up with ideas and plans to achieve this.
 
-- Babel
-- Rollup
+2. While these ideas were brillant, only one had to be selected and run with at the end. At this point, questions were asked to see how vaild and actionable those ideas were. This helped to smoothen out any grey areas; and
 
-#### Tests
+3. Finally, the best idea was selected from the lot this now took the team into the implementation, verification/testing and deployment phase.
 
-- Automated HTML5 W3C Validation
+During the Ideation phase, the team came up with an idea to create a portal that would help generate online Invoices (e-invoice) for Medium and Small Scale businesses, while hoping that this would help these businesses reduce cost on daily consumables like paper, printing ink and other associated cost invovled in the printing of traditional invoices. Hence, making the businesses more profitable at the long run. This idea birthed what we called **CUZTOMYZ.**
 
-## Contributing
+## CUZTOMYZ
 
-For issues, bugs or imporvements please open an [issue](https://github.com/TOBECHI-GH/Web-ecom-8/issues/new)
+Cuztomyz is an online invoicing platform that helps businesses reduce the cost of printing and issuing of invoices to their clients. The aim of cuztomyz is to be the leading invoicing platform in every business organisation.
 
-### JavaScript development
+We make it very easy to use and remove the need to make provisions for physical infrastructures. Our platform is very easy to use, there is no need to login or sign up.
+All needed to do is navigate to our site > Click Invoices > Fill in the required details > Preview > and the send. That's all.
 
-- rollup
-- rollup-plugin-babel
+Our Portal has the following [features](Features.md)
 
-### Notification
+While we recongise that this is an open source project, we employ you to go through our [licensing](LICENSE) for further details on how to use our codes. Also, Instrustions on how to install local version of our program is avalaible [Here.](Instruction.md)
 
-- gulp-plumber
-- gulp-notify
+We hope you would enjoy and continue using this great service we are providing you.
 
-### Styles Automation
-
-- gulp-sass
-- gulp-postcss
-- autoprefixer
-
-## HTML Files
-
-- index.html - main landing page
-- client.html - client page
+Thanks as you do so.
